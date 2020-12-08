@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "uppgift-dec-13/1.0.0": {
+        "runtime": {
+          "uppgift-dec-13.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "uppgift-dec-13/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
