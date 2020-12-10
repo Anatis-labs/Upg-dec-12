@@ -16,16 +16,22 @@ namespace uppgift_dec_13
             this.memento = new Memento(this.Status);
         }
 
-        public void Save(string update)
-        {
-            this.Status = update;
-            this.memento.mementoStack.Push(update);
+        public void Save()
+        {   
+            
+            this.memento.mementoStack.Push(this.Status);
         }
 
         public void Revert()
         {
-            this.Status = this.memento.mementoStack.Pop();
-            //this.Status = this.memento.status;
+            this.memento.mementoStackRedo.Push(this.Status);
+            this.Status = this.memento.mementoStack.Pop();           
+        }
+
+        public void Redo()
+        {
+            this.memento.mementoStack.Push(this.Status);
+            this.Status = this.memento.mementoStackRedo.Pop();                     
         }
     }
 
@@ -33,10 +39,16 @@ namespace uppgift_dec_13
     {
         public readonly string status;
         public Stack<string> mementoStack = new Stack<string>();
+        public Stack<string> mementoStackRedo = new Stack<string>();
         public Memento(String status)
         {
             this.status = status;
             mementoStack.Push(status);                   
+        }
+        public Memento(string status, string old)
+        {
+            this.status = status;
+            mementoStackRedo.Push(status);
         }
     }
 }
