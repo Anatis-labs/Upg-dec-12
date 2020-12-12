@@ -31,25 +31,24 @@ namespace uppgift_dec_13
                         Console.WriteLine("Enter a letter:");
                         do
                         {
-                            game.CurrentGuess = Console.ReadLine();
-                            if (game.CurrentGuess.Length == 1)
+                            guess.CurrentGuess = Console.ReadLine();
+                            if (guess.CurrentGuess.Length == 1)
                             {
                                 do
                                 {
-                                    if (game.WrongLetters.Contains(game.CurrentGuess) || game.RightLetters.Contains(game.CurrentGuess))
+                                    if (game.WrongLetters.Contains(guess.CurrentGuess) || game.RightLetters.Contains(guess.CurrentGuess))
                                     {
                                         Console.WriteLine("That letter have been entered before, please try a new one");
-                                        game.CurrentGuess = Console.ReadLine();
+                                        //guess.CurrentGuess = Console.ReadLine();
                                     }
                                     
-                                } while (game.WrongLetters.Contains(game.CurrentGuess) || game.RightLetters.Contains(game.CurrentGuess));
-                                //game.Guess(game.CurrentGuess);
+                                } while (game.WrongLetters.Contains(guess.CurrentGuess) || game.RightLetters.Contains(guess.CurrentGuess));                                
                             }
                             else
                             {
                                 Console.WriteLine("Please enter only one letter");
                             }
-                        } while (game.CurrentGuess.Length > 1);
+                        } while (guess.CurrentGuess.Length > 1);
 
                         guess.Save();
                         stackCount++;

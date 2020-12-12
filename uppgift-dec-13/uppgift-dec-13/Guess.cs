@@ -7,32 +7,31 @@ namespace uppgift_dec_13
 
     class Guess
     {
-        public String SecretWord { get; set; }
-
+        public string SecretWord { get; set; }
+        public string CurrentGuess { get; set; }
         private Memento memento;
 
 
         public void Save()
         {
             var game = new Game();
-            if (SecretWord.Contains(game.CurrentGuess))
-                this.memento.mementoStackRight.Push(game.CurrentGuess);
+            if (SecretWord.Contains(this.CurrentGuess))
+                memento.mementoStackRight.Push(this.CurrentGuess);
             else
-
-                this.memento.mementoStackWrong.Push(game.CurrentGuess);
+                memento.mementoStackWrong.Push(this.CurrentGuess);
         }
 
         public void Revert()
         {
             var game = new Game();
-            if (SecretWord.Contains(game.CurrentGuess))
+            if (SecretWord.Contains(CurrentGuess))
             {
-                this.memento.mementoStackRedoRight.Push(game.CurrentGuess);              
+                this.memento.mementoStackRedoRight.Push(CurrentGuess);              
                 game.RightLetters.Remove(this.memento.mementoStackRight.Pop());
             }
             else
             {
-                this.memento.mementoStackRedoWrong.Push(game.CurrentGuess);
+                this.memento.mementoStackRedoWrong.Push(CurrentGuess);
                 game.WrongLetters.Remove(this.memento.mementoStackWrong.Pop());             
             }
         }
@@ -42,8 +41,8 @@ namespace uppgift_dec_13
             var game = new Game();
             this.memento.mementoStackWrong.Push(this.SecretWord);
             this.memento.mementoStackRight.Push(this.SecretWord);
-            game.CurrentGuess = this.memento.mementoStackRedoWrong.Pop();
-            game.CurrentGuess = this.memento.mementoStackRedoRight.Pop();
+            CurrentGuess = this.memento.mementoStackRedoWrong.Pop();
+            CurrentGuess = this.memento.mementoStackRedoRight.Pop();
         }
     }
 

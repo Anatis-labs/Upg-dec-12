@@ -5,7 +5,7 @@ namespace uppgift_dec_13
 {
     class Game
     {
-        public string CurrentGuess { get; set; }
+        public readonly string CurrentGuess;
 
         public List<string> RightLetters = new List<string>();
 
