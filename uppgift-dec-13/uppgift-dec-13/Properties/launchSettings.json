@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "uppgift-dec-13": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
