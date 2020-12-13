@@ -8,7 +8,7 @@ namespace uppgift_dec_13
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            var guess = new Guess();
+            var guess = new Game();
             //var menu = new Menu();
 
             int stackCount = 0;
@@ -29,10 +29,12 @@ namespace uppgift_dec_13
                 Console.WriteLine("4: Redo the last revert");
                 Console.WriteLine("5: Quit");
                 Console.WriteLine();
+                Console.WriteLine("Current hp: {0}", guess.Hp);
+                Console.WriteLine();
                 Console.WriteLine("Current right letters are:");
 
 
-                Console.WriteLine("Current hp: {0}", guess.Hp);
+                
 
 
                 foreach (var c in guess.RightLetters)
