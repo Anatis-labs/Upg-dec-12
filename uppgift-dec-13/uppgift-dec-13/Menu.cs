@@ -6,7 +6,10 @@
 //{
 //    class Menu
 //    {
-//        might be a cool ui here later for the menu
+//        public void ListMenu()
+//        {
+            
+//        }
 //    }
 //}
 
